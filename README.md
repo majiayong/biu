@@ -21,25 +21,43 @@
 
 请先安装好依赖的开发环境：Java8、Gradle、Node.js、vue-cli。我自己使用的是Gradle4.6，Node8.11.1，vue-cli 2.9.3，建议使用Intellij IDEA。
 
-克隆项目到本地：
-
+**克隆项目到本地：**
+ 
 ~~~
 git clone https://github.com/CaiBaoHong/biu
 ~~~
 
-执行`_sql/biu.sql`导入mysql数据库
+**执行`_sql/biu.sql`导入mysql数据库**
 
 打开IDEA，`File - Settings - Build Execution Deployment - Build Tools - Gradle`配置好本机Gradle的路径。
 
 打开IDEA，`File - Open`打开biu项目的路径，导入项目，弹出Gradle导入引导窗口的，按下一步就行，确定后项目开始初始化，
-过程有点慢，其实就是下载server模块中Gradle声明的项目依赖。
+过程有点慢，
+其实就是**下载server模块中Gradle声明的项目依赖**。
 
-下载好依赖后，我们还需要下载browser模块的依赖。在IDEA左下角打开一个Terminal命令行终端。`cd browser`然后`npm install`，等待依赖安装完成。
+下载好依赖后，**我们还需要下载browser模块的依赖**。在IDEA左下角打开一个Terminal命令行终端。
+`cd browser`然后
+~~~
+前端部分：npm install
+~~~
+，等待依赖安装完成。
+依赖安装完成后，
+执行
+**(webpack4.0后的需要)**
+~~~
+前端部分：npm install webpack-cli -g
+~~~
 
+
+**后端的这几步 操作可以idea环境中进行**
+**后端的这几步 操作可以idea环境中进行**
+**后端的这几步 操作可以idea环境中进行**
+**后端的这几步 操作可以idea环境中进行**
 然后再新建两个Terminal命令行终端，即一共建三个命令行终端。
 
 在第1个终端输入：
 ~~~
+后端：
 cd server
 gradle build --continuous
 ~~~
@@ -48,14 +66,17 @@ gradle build --continuous
 
 在第2个终端输入：
 ~~~
+后端：
 cd server
 gradle bootRun
 ~~~
 启动spring boot。有时候由于持续构建没有编译好，会导致spring boot启动失败。多试几次就行。
 
+**启动前端**
 
 在第3个终端输入：
 ~~~
+前端部分：
 cd browser
 npm run dev
 ~~~
